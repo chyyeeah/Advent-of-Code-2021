@@ -52,7 +52,7 @@ const findSum = (b, nums) => {
         }
     }
     return sum;
-}
+};
 
 const findWinner = (d, b) => {
     const drawnNumbers = new Set();
