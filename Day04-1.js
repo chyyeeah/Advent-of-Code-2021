@@ -1,4 +1,4 @@
-const { drawings, boards, tests} = require('./data/day4');
+const {drawings, boards, tests} = require('./data/day4');
 
 const checkHorizontal = (b, nums) => {
     for (let row = 0; row < b.length; row++) {
@@ -46,9 +46,9 @@ const checkMinorDiagonal = (b, nums) => {
 const findSum = (b, nums) => {
     let sum = 0;
     for (let row = 0; row < b.length; row++) {
-        for (let col = 0; col < b.length; col++) {
+        for (let col = 0; col < b[row].length; col++) {
             const num = b[row][col];
-            if (!nums.has(num)) sum += Number(num);
+            if (!nums.has(num)) sum += num;
         }
     }
     return sum;
@@ -77,4 +77,12 @@ const findWinner = (d, b) => {
     return 0;
 };
 
-console.log(findWinner(drawings, boards));
+// console.log(findWinner(drawings, boards));
+
+module.exports = {
+    checkHorizontal, 
+    checkVertical, 
+    checkMajorDiagonal, 
+    checkMinorDiagonal,
+    findSum,
+};
